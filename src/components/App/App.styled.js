@@ -5,7 +5,7 @@ export const Container = styled.div`
   border-radius: 5px;
   margin: 30px auto 30px auto;
   padding: 20px 20px;
-  background-color: #9dc9ff;
+  background-color: #8ec5f2;
 `;
 
 export const Title = styled.h1`

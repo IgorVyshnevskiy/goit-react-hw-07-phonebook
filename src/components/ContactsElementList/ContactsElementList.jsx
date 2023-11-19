@@ -1,11 +1,22 @@
+import { useDeleteContactMutation } from 'redux/contacts';
 import { Contacts, Button } from './ContactsElementList.styled';
+import { RotatingLines } from 'react-loader-spinner';
 
-const ContactsElementList = ({ contacts, onDelete }) => {
-  return contacts.map(({ id, name, number }) => (
-    <Contacts key={id}>
+const ContactsElementList = ({ id, name, number }) => {
+  const [deleteContact, { isLoading: isDeleting }] = useDeleteContactMutation();
+
+  return (
+    <Contacts>
       {name}: {number}
-      <Button onClick={() => onDelete(id)}>Delete</Button>
+      <Button onClick={() => deleteContact(id)}>
+        {isDeleting ? (
+          <RotatingLines strokeColor="#f27b77" width="12" />
+        ) : (
+          'Delete'
+        )}
+      </Button>
     </Contacts>
-  ));
+  );
 };
+
 export default ContactsElementList;

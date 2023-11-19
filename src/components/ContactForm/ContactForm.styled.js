@@ -39,7 +39,7 @@ export const Button = styled.button`
   font-weight: 500;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  background-color: #343536;
+  background-color: #3f4041;
   color: #ffffff;
   border-color: transparent;
   border-radius: 3px;
